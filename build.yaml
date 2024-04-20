@@ -1,0 +1,10 @@
+targets:
+  $default:
+    builders:
+      graphql_codegen:
+        options:
+          assetsPath: lib/graphql/**
+          outputDirectory: __generated__
+          generatedFileHeader: "// ignore_for_file: type=lint\n"
+          clients:
+            - graphql_flutter

@@ -1,0 +1,16 @@
+mutation Login($username: String!, $password: String!){
+  auth {
+  tokenAuth(username: $username, password: $password) {
+    refreshExpiresIn
+    token
+    payload
+  }
+  }
+}
+
+mutation RefreshToken($token: String!) {
+  auth { refreshToken(token: $token) {
+    refreshExpiresIn
+    token
+  } }
+}
