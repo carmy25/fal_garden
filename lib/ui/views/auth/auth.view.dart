@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pmm_garden/core/services/auth.service.dart';
 import 'package:pmm_garden/ui/views/auth/sigin.view.dart';
+import 'package:pmm_garden/ui/views/home/home.view.dart';
 
 class AuthScreen extends ConsumerWidget {
   const AuthScreen({super.key});
@@ -11,7 +12,7 @@ class AuthScreen extends ConsumerWidget {
     final authState = ref.watch(authStateChangesProvider);
     return switch (authState) {
       AsyncData(:final value) =>
-        value != null ? const Text('AccountScreen') : const SignInScreen(),
+        value != null ? const HomeScreen() : const SignInScreen(),
       AsyncError(:final error) => Text('error: $error'),
       _ => const Text('Loading...'),
     };

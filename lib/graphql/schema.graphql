@@ -1,11 +1,25 @@
-"Root query\n    "
-type Query {
-  documents: DocumentsQuery
-  fals: FALsQuery
+"""Exposes a URL that specifies the behaviour of this scalar."""
+directive @specifiedBy(
+  """The URL that specifies the behaviour of this scalar."""
+  url: String!
+) on SCALAR
+
+type AuthMutation {
+  """Obtain JSON Web Token mutation"""
+  tokenAuth(username: String!, password: String!): ObtainJSONWebToken
+  verifyToken(token: String): Verify
+  refreshToken(token: String): Refresh
 }
 
-type DocumentsQuery {
-  certificates: CertificatesQuery
+"""
+The `BigInt` scalar type represents non-fractional whole numeric values.
+`BigInt` is not constrained to 32-bit like the `Int` type and thus is a less
+compatible type.
+"""
+scalar BigInt
+
+type CertificatesMutation {
+  createCertificate(input: CreateCertificateInput!): CreateCertificateMutation
 }
 
 type CertificatesQuery {
@@ -16,10 +30,57 @@ type CertificateType {
   id: ID!
   date: Date!
   attachment: String
+  slug: String!
   no: String!
   operationBasis: String!
   unitName: String!
   serviceUnitName: String!
+}
+
+input CreateCertificateInput {
+  date: Date
+  attachment: Upload
+  slug: String
+  no: String!
+  operationBasis: String!
+  unitName: String!
+  serviceUnitName: String!
+}
+
+type CreateCertificateMutation {
+  certificate: CertificateType
+}
+
+input CreateFALCategoryInput {
+  name: FalsFALCategoryNameChoices
+  faltypeSet: [ID]
+}
+
+type CreateFALCategoryMutation {
+  falCategory: FALCategoryType
+}
+
+input CreateFALInput {
+  falType: ID!
+  amount: Float!
+  density: Float
+  volume: Float
+  contentType: ID!
+  documentId: Int!
+}
+
+type CreateFALModelMutation {
+  fal: FALModelType
+}
+
+input CreateFALTypeInput {
+  name: String!
+  category: ID!
+  falSet: [ID]
+}
+
+type CreateFALTypeMutation {
+  falType: FALTypeType
 }
 
 """
@@ -29,10 +90,23 @@ value as specified by
 """
 scalar Date
 
-type FALsQuery {
-  categories: FALCategoriesQuery
-  types: FALTypesQuery
-  fals: FALModelsQuery
+type DocumentsMutation {
+  certificates: CertificatesMutation
+}
+
+type DocumentsQuery {
+  certificates: CertificatesQuery
+  types: [DocumentType]
+  all(documentType: String): [GeneralDocumentType]
+}
+
+type DocumentType {
+  verboseName: String
+  documentName: String
+}
+
+type FALCategoriesMutation {
+  createCategory(input: CreateFALCategoryInput!): CreateFALCategoryMutation
 }
 
 type FALCategoriesQuery {
@@ -43,6 +117,23 @@ type FALCategoryType {
   id: ID!
   name: FalsFALCategoryNameChoices!
   faltypeSet: [FALTypeType!]!
+}
+
+type FALModelsMutation {
+  createFal(input: CreateFALInput!): CreateFALModelMutation
+}
+
+type FALModelsQuery {
+  all: [FALModelType]
+}
+
+type FALModelType {
+  id: ID!
+  falType: FALTypeType!
+  amount: Float!
+  density: Float
+  volume: Float
+  documentId: Int!
 }
 
 """An enumeration."""
@@ -57,6 +148,26 @@ enum FalsFALCategoryNameChoices {
   OIL
 }
 
+type FALsMutation {
+  categories: FALCategoriesMutation
+  falTypes: FALTypesMutation
+  fals: FALModelsMutation
+}
+
+type FALsQuery {
+  categories: FALCategoriesQuery
+  types: FALTypesQuery
+  fals: FALModelsQuery
+}
+
+type FALTypesMutation {
+  createFalType(input: CreateFALTypeInput!): CreateFALTypeMutation
+}
+
+type FALTypesQuery {
+  all: [FALTypeType]
+}
+
 type FALTypeType {
   id: ID!
   name: String!
@@ -64,35 +175,29 @@ type FALTypeType {
   falSet: [FALModelType!]!
 }
 
-type FALModelType {
-  id: ID!
-  falType: FALTypeType!
-  amount: Float!
-  density: Float
-  volume: Float
-  documentId: Int!
+type GeneralDocumentType {
+  documentType: DocumentType
+  id: BigInt
+  no: String
+  date: Date
+  attachment: String
 }
 
-type FALTypesQuery {
-  all: [FALTypeType]
-}
+"""
+The `GenericScalar` scalar type represents a generic
+GraphQL scalar value that could be:
+String, Boolean, Int, Float, List or Object.
+"""
+scalar GenericScalar
 
-type FALModelsQuery {
-  all: [FALModelType]
-}
-
-"Root mutation\n    "
+"""
+Root mutation
+    
+"""
 type Mutation {
   auth: AuthMutation
   documents: DocumentsMutation
   fals: FALsMutation
-}
-
-type AuthMutation {
-  """Obtain JSON Web Token mutation"""
-  tokenAuth(username: String!, password: String!): ObtainJSONWebToken
-  verifyToken(token: String): Verify
-  refreshToken(token: String): Refresh
 }
 
 """Obtain JSON Web Token mutation"""
@@ -103,14 +208,12 @@ type ObtainJSONWebToken {
 }
 
 """
-The `GenericScalar` scalar type represents a generic
-GraphQL scalar value that could be:
-String, Boolean, Int, Float, List or Object.
+Root query
+    
 """
-scalar GenericScalar
-
-type Verify {
-  payload: GenericScalar!
+type Query {
+  documents: DocumentsQuery
+  fals: FALsQuery
 }
 
 type Refresh {
@@ -119,107 +222,13 @@ type Refresh {
   token: String!
 }
 
-type DocumentsMutation {
-  certificates: CertificatesMutation
-}
-
-type CertificatesMutation {
-  createCertificate(input: CreateCertificateInput!): CreateCertificateMutation
-}
-
-type CreateCertificateMutation {
-  certificate: CertificateType
-}
-
-input CreateCertificateInput {
-  """"""
-  date: Date!
-  attachment: Upload
-
-  """"""
-  no: String!
-
-  """"""
-  operationBasis: String!
-
-  """"""
-  unitName: String!
-
-  """"""
-  serviceUnitName: String!
-}
-
 """
 Create scalar that ignores normal serialization/deserialization, since
 that will be handled by the multipart request spec
 """
 scalar Upload
 
-type FALsMutation {
-  categories: FALCategoriesMutation
-  falTypes: FALTypesMutation
-  fals: FALModelsMutation
+type Verify {
+  payload: GenericScalar!
 }
 
-type FALCategoriesMutation {
-  createCategory(input: CreateFALCategoryInput!): CreateFALCategoryMutation
-}
-
-type CreateFALCategoryMutation {
-  falCategory: FALCategoryType
-}
-
-input CreateFALCategoryInput {
-  """"""
-  name: FalsFALCategoryNameChoices
-
-  """"""
-  faltypeSet: [ID]
-}
-
-type FALTypesMutation {
-  createFalType(input: CreateFALTypeInput!): CreateFALTypeMutation
-}
-
-type CreateFALTypeMutation {
-  falType: FALTypeType
-}
-
-input CreateFALTypeInput {
-  """"""
-  name: String!
-
-  """"""
-  category: ID!
-
-  """"""
-  falSet: [ID]
-}
-
-type FALModelsMutation {
-  createFal(input: CreateFALInput!): CreateFALModelMutation
-}
-
-type CreateFALModelMutation {
-  fal: FALModelType
-}
-
-input CreateFALInput {
-  """"""
-  falType: ID!
-
-  """"""
-  amount: Float!
-
-  """"""
-  density: Float
-
-  """"""
-  volume: Float
-
-  """"""
-  contentType: ID!
-
-  """"""
-  documentId: Int!
-}

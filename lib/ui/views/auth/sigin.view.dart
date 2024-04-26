@@ -54,14 +54,14 @@ class SignInScreenState extends ConsumerState<SignInScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Spacer(),
-                      Center(
+                      const Center(
                           child: TextUtil(
                         text: "Ввійти",
                         weight: true,
                         size: 30,
                       )),
                       const Spacer(),
-                      TextUtil(
+                      const TextUtil(
                         text: "імʼя користувача",
                       ),
                       Container(
@@ -89,7 +89,7 @@ class SignInScreenState extends ConsumerState<SignInScreen> {
                         ),
                       ),
                       const Spacer(),
-                      TextUtil(
+                      const TextUtil(
                         text: "Пароль",
                       ),
                       Container(
@@ -121,10 +121,10 @@ class SignInScreenState extends ConsumerState<SignInScreen> {
                         height: 40,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.lightBlueAccent,
                             borderRadius: BorderRadius.circular(30)),
                         alignment: Alignment.center,
-                        child: ElevatedButton(
+                        child: TextButton(
                           onPressed: state.isLoading
                               ? null
                               : () {
@@ -142,7 +142,7 @@ class SignInScreenState extends ConsumerState<SignInScreen> {
                                     );
                                   }
                                 },
-                          child: TextUtil(
+                          child: const TextUtil(
                             color: Colors.black,
                             text: 'Ввійти',
                           ),

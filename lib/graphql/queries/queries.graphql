@@ -1,10 +1,10 @@
 mutation Login($username: String!, $password: String!){
   auth {
-  tokenAuth(username: $username, password: $password) {
-    refreshExpiresIn
-    token
-    payload
-  }
+    tokenAuth(username: $username, password: $password) {
+      refreshExpiresIn
+      token
+      payload
+    }
   }
 }
 
@@ -13,4 +13,18 @@ mutation RefreshToken($token: String!) {
     refreshExpiresIn
     token
   } }
+}
+
+query AllDocuments {
+  documents {
+    all {
+      no
+      date
+      attachment
+      documentType {
+        documentName
+        verboseName
+      }
+    }
+  }
 }

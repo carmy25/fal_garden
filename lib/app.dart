@@ -19,7 +19,7 @@ class MyApp extends ConsumerWidget {
         Locale('uk'),
       ],
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
+      theme: ThemeData.dark(),
       home: const AuthScreen(),
     );
     return GraphQLProvider(client: graphQLService.clientNotifier, child: app);

@@ -1681,3 +1681,887 @@ class _CopyWithStubImpl$Mutation$RefreshToken$auth$refreshToken<TRes>
   }) =>
       _res;
 }
+
+class Query$AllDocuments {
+  Query$AllDocuments({
+    this.documents,
+    this.$__typename = 'Query',
+  });
+
+  factory Query$AllDocuments.fromJson(Map<String, dynamic> json) {
+    final l$documents = json['documents'];
+    final l$$__typename = json['__typename'];
+    return Query$AllDocuments(
+      documents: l$documents == null
+          ? null
+          : Query$AllDocuments$documents.fromJson(
+              (l$documents as Map<String, dynamic>)),
+      $__typename: (l$$__typename as String),
+    );
+  }
+
+  final Query$AllDocuments$documents? documents;
+
+  final String $__typename;
+
+  Map<String, dynamic> toJson() {
+    final _resultData = <String, dynamic>{};
+    final l$documents = documents;
+    _resultData['documents'] = l$documents?.toJson();
+    final l$$__typename = $__typename;
+    _resultData['__typename'] = l$$__typename;
+    return _resultData;
+  }
+
+  @override
+  int get hashCode {
+    final l$documents = documents;
+    final l$$__typename = $__typename;
+    return Object.hashAll([
+      l$documents,
+      l$$__typename,
+    ]);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Query$AllDocuments) || runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$documents = documents;
+    final lOther$documents = other.documents;
+    if (l$documents != lOther$documents) {
+      return false;
+    }
+    final l$$__typename = $__typename;
+    final lOther$$__typename = other.$__typename;
+    if (l$$__typename != lOther$$__typename) {
+      return false;
+    }
+    return true;
+  }
+}
+
+extension UtilityExtension$Query$AllDocuments on Query$AllDocuments {
+  CopyWith$Query$AllDocuments<Query$AllDocuments> get copyWith =>
+      CopyWith$Query$AllDocuments(
+        this,
+        (i) => i,
+      );
+}
+
+abstract class CopyWith$Query$AllDocuments<TRes> {
+  factory CopyWith$Query$AllDocuments(
+    Query$AllDocuments instance,
+    TRes Function(Query$AllDocuments) then,
+  ) = _CopyWithImpl$Query$AllDocuments;
+
+  factory CopyWith$Query$AllDocuments.stub(TRes res) =
+      _CopyWithStubImpl$Query$AllDocuments;
+
+  TRes call({
+    Query$AllDocuments$documents? documents,
+    String? $__typename,
+  });
+  CopyWith$Query$AllDocuments$documents<TRes> get documents;
+}
+
+class _CopyWithImpl$Query$AllDocuments<TRes>
+    implements CopyWith$Query$AllDocuments<TRes> {
+  _CopyWithImpl$Query$AllDocuments(
+    this._instance,
+    this._then,
+  );
+
+  final Query$AllDocuments _instance;
+
+  final TRes Function(Query$AllDocuments) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? documents = _undefined,
+    Object? $__typename = _undefined,
+  }) =>
+      _then(Query$AllDocuments(
+        documents: documents == _undefined
+            ? _instance.documents
+            : (documents as Query$AllDocuments$documents?),
+        $__typename: $__typename == _undefined || $__typename == null
+            ? _instance.$__typename
+            : ($__typename as String),
+      ));
+
+  CopyWith$Query$AllDocuments$documents<TRes> get documents {
+    final local$documents = _instance.documents;
+    return local$documents == null
+        ? CopyWith$Query$AllDocuments$documents.stub(_then(_instance))
+        : CopyWith$Query$AllDocuments$documents(
+            local$documents, (e) => call(documents: e));
+  }
+}
+
+class _CopyWithStubImpl$Query$AllDocuments<TRes>
+    implements CopyWith$Query$AllDocuments<TRes> {
+  _CopyWithStubImpl$Query$AllDocuments(this._res);
+
+  TRes _res;
+
+  call({
+    Query$AllDocuments$documents? documents,
+    String? $__typename,
+  }) =>
+      _res;
+
+  CopyWith$Query$AllDocuments$documents<TRes> get documents =>
+      CopyWith$Query$AllDocuments$documents.stub(_res);
+}
+
+const documentNodeQueryAllDocuments = DocumentNode(definitions: [
+  OperationDefinitionNode(
+    type: OperationType.query,
+    name: NameNode(value: 'AllDocuments'),
+    variableDefinitions: [],
+    directives: [],
+    selectionSet: SelectionSetNode(selections: [
+      FieldNode(
+        name: NameNode(value: 'documents'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: SelectionSetNode(selections: [
+          FieldNode(
+            name: NameNode(value: 'all'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: SelectionSetNode(selections: [
+              FieldNode(
+                name: NameNode(value: 'no'),
+                alias: null,
+                arguments: [],
+                directives: [],
+                selectionSet: null,
+              ),
+              FieldNode(
+                name: NameNode(value: 'date'),
+                alias: null,
+                arguments: [],
+                directives: [],
+                selectionSet: null,
+              ),
+              FieldNode(
+                name: NameNode(value: 'attachment'),
+                alias: null,
+                arguments: [],
+                directives: [],
+                selectionSet: null,
+              ),
+              FieldNode(
+                name: NameNode(value: 'documentType'),
+                alias: null,
+                arguments: [],
+                directives: [],
+                selectionSet: SelectionSetNode(selections: [
+                  FieldNode(
+                    name: NameNode(value: 'documentName'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: null,
+                  ),
+                  FieldNode(
+                    name: NameNode(value: 'verboseName'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: null,
+                  ),
+                  FieldNode(
+                    name: NameNode(value: '__typename'),
+                    alias: null,
+                    arguments: [],
+                    directives: [],
+                    selectionSet: null,
+                  ),
+                ]),
+              ),
+              FieldNode(
+                name: NameNode(value: '__typename'),
+                alias: null,
+                arguments: [],
+                directives: [],
+                selectionSet: null,
+              ),
+            ]),
+          ),
+          FieldNode(
+            name: NameNode(value: '__typename'),
+            alias: null,
+            arguments: [],
+            directives: [],
+            selectionSet: null,
+          ),
+        ]),
+      ),
+      FieldNode(
+        name: NameNode(value: '__typename'),
+        alias: null,
+        arguments: [],
+        directives: [],
+        selectionSet: null,
+      ),
+    ]),
+  ),
+]);
+Query$AllDocuments _parserFn$Query$AllDocuments(Map<String, dynamic> data) =>
+    Query$AllDocuments.fromJson(data);
+typedef OnQueryComplete$Query$AllDocuments = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$AllDocuments?,
+);
+
+class Options$Query$AllDocuments
+    extends graphql.QueryOptions<Query$AllDocuments> {
+  Options$Query$AllDocuments({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$AllDocuments? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$AllDocuments? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null ? null : _parserFn$Query$AllDocuments(data),
+                  ),
+          onError: onError,
+          document: documentNodeQueryAllDocuments,
+          parserFn: _parserFn$Query$AllDocuments,
+        );
+
+  final OnQueryComplete$Query$AllDocuments? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$AllDocuments
+    extends graphql.WatchQueryOptions<Query$AllDocuments> {
+  WatchOptions$Query$AllDocuments({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$AllDocuments? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQueryAllDocuments,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$AllDocuments,
+        );
+}
+
+class FetchMoreOptions$Query$AllDocuments extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$AllDocuments(
+      {required graphql.UpdateQuery updateQuery})
+      : super(
+          updateQuery: updateQuery,
+          document: documentNodeQueryAllDocuments,
+        );
+}
+
+extension ClientExtension$Query$AllDocuments on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$AllDocuments>> query$AllDocuments(
+          [Options$Query$AllDocuments? options]) async =>
+      await this.query(options ?? Options$Query$AllDocuments());
+  graphql.ObservableQuery<Query$AllDocuments> watchQuery$AllDocuments(
+          [WatchOptions$Query$AllDocuments? options]) =>
+      this.watchQuery(options ?? WatchOptions$Query$AllDocuments());
+  void writeQuery$AllDocuments({
+    required Query$AllDocuments data,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+            operation:
+                graphql.Operation(document: documentNodeQueryAllDocuments)),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$AllDocuments? readQuery$AllDocuments({bool optimistic = true}) {
+    final result = this.readQuery(
+      graphql.Request(
+          operation:
+              graphql.Operation(document: documentNodeQueryAllDocuments)),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$AllDocuments.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$AllDocuments> useQuery$AllDocuments(
+        [Options$Query$AllDocuments? options]) =>
+    graphql_flutter.useQuery(options ?? Options$Query$AllDocuments());
+graphql.ObservableQuery<Query$AllDocuments> useWatchQuery$AllDocuments(
+        [WatchOptions$Query$AllDocuments? options]) =>
+    graphql_flutter.useWatchQuery(options ?? WatchOptions$Query$AllDocuments());
+
+class Query$AllDocuments$Widget
+    extends graphql_flutter.Query<Query$AllDocuments> {
+  Query$AllDocuments$Widget({
+    widgets.Key? key,
+    Options$Query$AllDocuments? options,
+    required graphql_flutter.QueryBuilder<Query$AllDocuments> builder,
+  }) : super(
+          key: key,
+          options: options ?? Options$Query$AllDocuments(),
+          builder: builder,
+        );
+}
+
+class Query$AllDocuments$documents {
+  Query$AllDocuments$documents({
+    this.all,
+    this.$__typename = 'DocumentsQuery',
+  });
+
+  factory Query$AllDocuments$documents.fromJson(Map<String, dynamic> json) {
+    final l$all = json['all'];
+    final l$$__typename = json['__typename'];
+    return Query$AllDocuments$documents(
+      all: (l$all as List<dynamic>?)
+          ?.map((e) => e == null
+              ? null
+              : Query$AllDocuments$documents$all.fromJson(
+                  (e as Map<String, dynamic>)))
+          .toList(),
+      $__typename: (l$$__typename as String),
+    );
+  }
+
+  final List<Query$AllDocuments$documents$all?>? all;
+
+  final String $__typename;
+
+  Map<String, dynamic> toJson() {
+    final _resultData = <String, dynamic>{};
+    final l$all = all;
+    _resultData['all'] = l$all?.map((e) => e?.toJson()).toList();
+    final l$$__typename = $__typename;
+    _resultData['__typename'] = l$$__typename;
+    return _resultData;
+  }
+
+  @override
+  int get hashCode {
+    final l$all = all;
+    final l$$__typename = $__typename;
+    return Object.hashAll([
+      l$all == null ? null : Object.hashAll(l$all.map((v) => v)),
+      l$$__typename,
+    ]);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Query$AllDocuments$documents) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$all = all;
+    final lOther$all = other.all;
+    if (l$all != null && lOther$all != null) {
+      if (l$all.length != lOther$all.length) {
+        return false;
+      }
+      for (int i = 0; i < l$all.length; i++) {
+        final l$all$entry = l$all[i];
+        final lOther$all$entry = lOther$all[i];
+        if (l$all$entry != lOther$all$entry) {
+          return false;
+        }
+      }
+    } else if (l$all != lOther$all) {
+      return false;
+    }
+    final l$$__typename = $__typename;
+    final lOther$$__typename = other.$__typename;
+    if (l$$__typename != lOther$$__typename) {
+      return false;
+    }
+    return true;
+  }
+}
+
+extension UtilityExtension$Query$AllDocuments$documents
+    on Query$AllDocuments$documents {
+  CopyWith$Query$AllDocuments$documents<Query$AllDocuments$documents>
+      get copyWith => CopyWith$Query$AllDocuments$documents(
+            this,
+            (i) => i,
+          );
+}
+
+abstract class CopyWith$Query$AllDocuments$documents<TRes> {
+  factory CopyWith$Query$AllDocuments$documents(
+    Query$AllDocuments$documents instance,
+    TRes Function(Query$AllDocuments$documents) then,
+  ) = _CopyWithImpl$Query$AllDocuments$documents;
+
+  factory CopyWith$Query$AllDocuments$documents.stub(TRes res) =
+      _CopyWithStubImpl$Query$AllDocuments$documents;
+
+  TRes call({
+    List<Query$AllDocuments$documents$all?>? all,
+    String? $__typename,
+  });
+  TRes all(
+      Iterable<Query$AllDocuments$documents$all?>? Function(
+              Iterable<
+                  CopyWith$Query$AllDocuments$documents$all<
+                      Query$AllDocuments$documents$all>?>?)
+          _fn);
+}
+
+class _CopyWithImpl$Query$AllDocuments$documents<TRes>
+    implements CopyWith$Query$AllDocuments$documents<TRes> {
+  _CopyWithImpl$Query$AllDocuments$documents(
+    this._instance,
+    this._then,
+  );
+
+  final Query$AllDocuments$documents _instance;
+
+  final TRes Function(Query$AllDocuments$documents) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? all = _undefined,
+    Object? $__typename = _undefined,
+  }) =>
+      _then(Query$AllDocuments$documents(
+        all: all == _undefined
+            ? _instance.all
+            : (all as List<Query$AllDocuments$documents$all?>?),
+        $__typename: $__typename == _undefined || $__typename == null
+            ? _instance.$__typename
+            : ($__typename as String),
+      ));
+
+  TRes all(
+          Iterable<Query$AllDocuments$documents$all?>? Function(
+                  Iterable<
+                      CopyWith$Query$AllDocuments$documents$all<
+                          Query$AllDocuments$documents$all>?>?)
+              _fn) =>
+      call(
+          all: _fn(_instance.all?.map((e) => e == null
+              ? null
+              : CopyWith$Query$AllDocuments$documents$all(
+                  e,
+                  (i) => i,
+                )))?.toList());
+}
+
+class _CopyWithStubImpl$Query$AllDocuments$documents<TRes>
+    implements CopyWith$Query$AllDocuments$documents<TRes> {
+  _CopyWithStubImpl$Query$AllDocuments$documents(this._res);
+
+  TRes _res;
+
+  call({
+    List<Query$AllDocuments$documents$all?>? all,
+    String? $__typename,
+  }) =>
+      _res;
+
+  all(_fn) => _res;
+}
+
+class Query$AllDocuments$documents$all {
+  Query$AllDocuments$documents$all({
+    this.no,
+    this.date,
+    this.attachment,
+    this.documentType,
+    this.$__typename = 'GeneralDocumentType',
+  });
+
+  factory Query$AllDocuments$documents$all.fromJson(Map<String, dynamic> json) {
+    final l$no = json['no'];
+    final l$date = json['date'];
+    final l$attachment = json['attachment'];
+    final l$documentType = json['documentType'];
+    final l$$__typename = json['__typename'];
+    return Query$AllDocuments$documents$all(
+      no: (l$no as String?),
+      date: (l$date as String?),
+      attachment: (l$attachment as String?),
+      documentType: l$documentType == null
+          ? null
+          : Query$AllDocuments$documents$all$documentType.fromJson(
+              (l$documentType as Map<String, dynamic>)),
+      $__typename: (l$$__typename as String),
+    );
+  }
+
+  final String? no;
+
+  final String? date;
+
+  final String? attachment;
+
+  final Query$AllDocuments$documents$all$documentType? documentType;
+
+  final String $__typename;
+
+  Map<String, dynamic> toJson() {
+    final _resultData = <String, dynamic>{};
+    final l$no = no;
+    _resultData['no'] = l$no;
+    final l$date = date;
+    _resultData['date'] = l$date;
+    final l$attachment = attachment;
+    _resultData['attachment'] = l$attachment;
+    final l$documentType = documentType;
+    _resultData['documentType'] = l$documentType?.toJson();
+    final l$$__typename = $__typename;
+    _resultData['__typename'] = l$$__typename;
+    return _resultData;
+  }
+
+  @override
+  int get hashCode {
+    final l$no = no;
+    final l$date = date;
+    final l$attachment = attachment;
+    final l$documentType = documentType;
+    final l$$__typename = $__typename;
+    return Object.hashAll([
+      l$no,
+      l$date,
+      l$attachment,
+      l$documentType,
+      l$$__typename,
+    ]);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Query$AllDocuments$documents$all) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$no = no;
+    final lOther$no = other.no;
+    if (l$no != lOther$no) {
+      return false;
+    }
+    final l$date = date;
+    final lOther$date = other.date;
+    if (l$date != lOther$date) {
+      return false;
+    }
+    final l$attachment = attachment;
+    final lOther$attachment = other.attachment;
+    if (l$attachment != lOther$attachment) {
+      return false;
+    }
+    final l$documentType = documentType;
+    final lOther$documentType = other.documentType;
+    if (l$documentType != lOther$documentType) {
+      return false;
+    }
+    final l$$__typename = $__typename;
+    final lOther$$__typename = other.$__typename;
+    if (l$$__typename != lOther$$__typename) {
+      return false;
+    }
+    return true;
+  }
+}
+
+extension UtilityExtension$Query$AllDocuments$documents$all
+    on Query$AllDocuments$documents$all {
+  CopyWith$Query$AllDocuments$documents$all<Query$AllDocuments$documents$all>
+      get copyWith => CopyWith$Query$AllDocuments$documents$all(
+            this,
+            (i) => i,
+          );
+}
+
+abstract class CopyWith$Query$AllDocuments$documents$all<TRes> {
+  factory CopyWith$Query$AllDocuments$documents$all(
+    Query$AllDocuments$documents$all instance,
+    TRes Function(Query$AllDocuments$documents$all) then,
+  ) = _CopyWithImpl$Query$AllDocuments$documents$all;
+
+  factory CopyWith$Query$AllDocuments$documents$all.stub(TRes res) =
+      _CopyWithStubImpl$Query$AllDocuments$documents$all;
+
+  TRes call({
+    String? no,
+    String? date,
+    String? attachment,
+    Query$AllDocuments$documents$all$documentType? documentType,
+    String? $__typename,
+  });
+  CopyWith$Query$AllDocuments$documents$all$documentType<TRes> get documentType;
+}
+
+class _CopyWithImpl$Query$AllDocuments$documents$all<TRes>
+    implements CopyWith$Query$AllDocuments$documents$all<TRes> {
+  _CopyWithImpl$Query$AllDocuments$documents$all(
+    this._instance,
+    this._then,
+  );
+
+  final Query$AllDocuments$documents$all _instance;
+
+  final TRes Function(Query$AllDocuments$documents$all) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? no = _undefined,
+    Object? date = _undefined,
+    Object? attachment = _undefined,
+    Object? documentType = _undefined,
+    Object? $__typename = _undefined,
+  }) =>
+      _then(Query$AllDocuments$documents$all(
+        no: no == _undefined ? _instance.no : (no as String?),
+        date: date == _undefined ? _instance.date : (date as String?),
+        attachment: attachment == _undefined
+            ? _instance.attachment
+            : (attachment as String?),
+        documentType: documentType == _undefined
+            ? _instance.documentType
+            : (documentType as Query$AllDocuments$documents$all$documentType?),
+        $__typename: $__typename == _undefined || $__typename == null
+            ? _instance.$__typename
+            : ($__typename as String),
+      ));
+
+  CopyWith$Query$AllDocuments$documents$all$documentType<TRes>
+      get documentType {
+    final local$documentType = _instance.documentType;
+    return local$documentType == null
+        ? CopyWith$Query$AllDocuments$documents$all$documentType.stub(
+            _then(_instance))
+        : CopyWith$Query$AllDocuments$documents$all$documentType(
+            local$documentType, (e) => call(documentType: e));
+  }
+}
+
+class _CopyWithStubImpl$Query$AllDocuments$documents$all<TRes>
+    implements CopyWith$Query$AllDocuments$documents$all<TRes> {
+  _CopyWithStubImpl$Query$AllDocuments$documents$all(this._res);
+
+  TRes _res;
+
+  call({
+    String? no,
+    String? date,
+    String? attachment,
+    Query$AllDocuments$documents$all$documentType? documentType,
+    String? $__typename,
+  }) =>
+      _res;
+
+  CopyWith$Query$AllDocuments$documents$all$documentType<TRes>
+      get documentType =>
+          CopyWith$Query$AllDocuments$documents$all$documentType.stub(_res);
+}
+
+class Query$AllDocuments$documents$all$documentType {
+  Query$AllDocuments$documents$all$documentType({
+    this.documentName,
+    this.verboseName,
+    this.$__typename = 'DocumentType',
+  });
+
+  factory Query$AllDocuments$documents$all$documentType.fromJson(
+      Map<String, dynamic> json) {
+    final l$documentName = json['documentName'];
+    final l$verboseName = json['verboseName'];
+    final l$$__typename = json['__typename'];
+    return Query$AllDocuments$documents$all$documentType(
+      documentName: (l$documentName as String?),
+      verboseName: (l$verboseName as String?),
+      $__typename: (l$$__typename as String),
+    );
+  }
+
+  final String? documentName;
+
+  final String? verboseName;
+
+  final String $__typename;
+
+  Map<String, dynamic> toJson() {
+    final _resultData = <String, dynamic>{};
+    final l$documentName = documentName;
+    _resultData['documentName'] = l$documentName;
+    final l$verboseName = verboseName;
+    _resultData['verboseName'] = l$verboseName;
+    final l$$__typename = $__typename;
+    _resultData['__typename'] = l$$__typename;
+    return _resultData;
+  }
+
+  @override
+  int get hashCode {
+    final l$documentName = documentName;
+    final l$verboseName = verboseName;
+    final l$$__typename = $__typename;
+    return Object.hashAll([
+      l$documentName,
+      l$verboseName,
+      l$$__typename,
+    ]);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (!(other is Query$AllDocuments$documents$all$documentType) ||
+        runtimeType != other.runtimeType) {
+      return false;
+    }
+    final l$documentName = documentName;
+    final lOther$documentName = other.documentName;
+    if (l$documentName != lOther$documentName) {
+      return false;
+    }
+    final l$verboseName = verboseName;
+    final lOther$verboseName = other.verboseName;
+    if (l$verboseName != lOther$verboseName) {
+      return false;
+    }
+    final l$$__typename = $__typename;
+    final lOther$$__typename = other.$__typename;
+    if (l$$__typename != lOther$$__typename) {
+      return false;
+    }
+    return true;
+  }
+}
+
+extension UtilityExtension$Query$AllDocuments$documents$all$documentType
+    on Query$AllDocuments$documents$all$documentType {
+  CopyWith$Query$AllDocuments$documents$all$documentType<
+          Query$AllDocuments$documents$all$documentType>
+      get copyWith => CopyWith$Query$AllDocuments$documents$all$documentType(
+            this,
+            (i) => i,
+          );
+}
+
+abstract class CopyWith$Query$AllDocuments$documents$all$documentType<TRes> {
+  factory CopyWith$Query$AllDocuments$documents$all$documentType(
+    Query$AllDocuments$documents$all$documentType instance,
+    TRes Function(Query$AllDocuments$documents$all$documentType) then,
+  ) = _CopyWithImpl$Query$AllDocuments$documents$all$documentType;
+
+  factory CopyWith$Query$AllDocuments$documents$all$documentType.stub(
+          TRes res) =
+      _CopyWithStubImpl$Query$AllDocuments$documents$all$documentType;
+
+  TRes call({
+    String? documentName,
+    String? verboseName,
+    String? $__typename,
+  });
+}
+
+class _CopyWithImpl$Query$AllDocuments$documents$all$documentType<TRes>
+    implements CopyWith$Query$AllDocuments$documents$all$documentType<TRes> {
+  _CopyWithImpl$Query$AllDocuments$documents$all$documentType(
+    this._instance,
+    this._then,
+  );
+
+  final Query$AllDocuments$documents$all$documentType _instance;
+
+  final TRes Function(Query$AllDocuments$documents$all$documentType) _then;
+
+  static const _undefined = <dynamic, dynamic>{};
+
+  TRes call({
+    Object? documentName = _undefined,
+    Object? verboseName = _undefined,
+    Object? $__typename = _undefined,
+  }) =>
+      _then(Query$AllDocuments$documents$all$documentType(
+        documentName: documentName == _undefined
+            ? _instance.documentName
+            : (documentName as String?),
+        verboseName: verboseName == _undefined
+            ? _instance.verboseName
+            : (verboseName as String?),
+        $__typename: $__typename == _undefined || $__typename == null
+            ? _instance.$__typename
+            : ($__typename as String),
+      ));
+}
+
+class _CopyWithStubImpl$Query$AllDocuments$documents$all$documentType<TRes>
+    implements CopyWith$Query$AllDocuments$documents$all$documentType<TRes> {
+  _CopyWithStubImpl$Query$AllDocuments$documents$all$documentType(this._res);
+
+  TRes _res;
+
+  call({
+    String? documentName,
+    String? verboseName,
+    String? $__typename,
+  }) =>
+      _res;
+}
